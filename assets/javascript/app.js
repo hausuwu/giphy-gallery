@@ -25,7 +25,7 @@ $(document).on("click", ".animalBtn", function(event) {
     $(".giphy-view").empty();
 
     var animalNam = $(this).attr("data-animalname");
-    console.log(animalNam);
+    // console.log(animalNam);
 
     var apiKey = "LzvJf5Qsthm2cMqcRRI7z4TRzFQmdQUP";
 
@@ -39,7 +39,7 @@ $(document).on("click", ".animalBtn", function(event) {
         url: queryURL,
         method: "GET"
     }).then(function(response){
-        console.log(response);
+        // console.log(response);
         // console.log(response.data.fixed_width_small_still_url);
         // console.log(response.data.fixed_width_small_url);
 
@@ -55,6 +55,8 @@ $(document).on("click", ".animalBtn", function(event) {
             img.attr("src", results[i].images.fixed_height_still.url);
             img.attr("data-animate", results[i].images.fixed_height.url);
             img.attr("data-still", results[i].images.fixed_height_still.url);
+            img.attr("data-state", "still");
+            img.attr("class", "gif");
 
             gifDiv.append(p);
             gifDiv.append(img);
@@ -71,11 +73,26 @@ $("#add-button").on("click", function(event){
     event.preventDefault();
 
     var userAnimal = $("#animal-input").val();
-    console.log(userAnimal);
+    // console.log(userAnimal);
     buttons.push(userAnimal);
 
     renderButtons();
 })
 
+$(document).on("click", ".gif", function(event) {
+    console.log("clicked");
+    // The attr jQuery method allows us to get or set the value of any attribute on our HTML element
+    var state = $(this).attr("data-state");
+    // If the clicked image's state is still, update its src attribute to what its data-animate value is.
+    // Then, set the image's data-state to animate
+    // Else set src to the data-still value
+    if (state === "still") {
+      $(this).attr("src", $(this).attr("data-animate"));
+      $(this).attr("data-state", "animate");
+    } else {
+      $(this).attr("src", $(this).attr("data-still"));
+      $(this).attr("data-state", "still");
+    }
+  });
 
 renderButtons();
