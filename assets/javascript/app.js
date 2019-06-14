@@ -59,7 +59,7 @@ $(document).on("click", ".animalBtn", function(event) {
             img.attr("data-animate", results[i].images.fixed_height.url);
             img.attr("data-still", results[i].images.fixed_height_still.url);
             img.attr("data-state", "still");
-            img.attr("class", "gif");
+            img.attr("class", "gif mb-5");
 
             gifDiv.append(p);
             gifDiv.append(img);
