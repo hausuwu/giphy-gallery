@@ -1,3 +1,6 @@
+// BUTTON ARRAY VARIABLE
+// ---------------------------------------------------------------
+
 var buttons = ["penguin", "goose", "raven", "tortoise"];
 
 
