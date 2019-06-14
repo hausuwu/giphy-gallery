@@ -37,7 +37,7 @@ $(document).on("click", ".animalBtn", function(event) {
 
     // var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=" + apiKey + "&tag=" + animalNam;
 
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + animalNam + "&api_key=" + apiKey + "&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animalNam + "&api_key=" + apiKey + "&limit=10";
 
 
 
