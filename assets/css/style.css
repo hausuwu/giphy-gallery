@@ -1,0 +1,18 @@
+body {
+    background-color: lightcyan;
+}
+
+.giphy-view {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.buttons-view {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-content: center;
+}
+

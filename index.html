@@ -5,28 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- reset css -->
-    <link href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">    
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- external link -->
-    <link href="./assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     <title>Document</title>
 </head>
 <body>
 
 <div class="container">
 
-    <h1>Giphy search</h1>
+    <h1 class="mt-3">Giphy search</h1>
+    <hr>
 
     <!-- new buttons will appear here -->
     <div id="buttons-view"></div>
 
-    <form id="giphy-form">
-        <label for="giphy-form">create a new button</label>
-        <input type="text" id="animal-input">
+    <form class="mt-3 " id="giphy-form">
+        <label for="giphy-form">Add Buttons Below:</label>
         <br>
-
-        <input id="add-button" type="submit" value="create a new button">
+        <input type="text" id="animal-input">
+        <input class="btn btn-primary" id="add-button" type="submit" value="Submit">
     </form>
 
     <div class="giphy-view"></div>

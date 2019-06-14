@@ -1,8 +1,9 @@
 var buttons = ["penguin", "goose", "raven", "tortoise"];
 
 
+// RENDER BUTTONS
+// ---------------------------------------------------------------
 
-// creates new buttons and assigns them a class and custom data time
 function renderButtons() {
 
     $("#buttons-view").empty();
@@ -10,14 +11,16 @@ function renderButtons() {
     for ( var i = 0; i < buttons.length; i++) {
         var newBtn = $("<button>");
         newBtn.text(buttons[i]);
-        newBtn.attr("class", "animalBtn");
+        newBtn.attr("class", "animalBtn btn btn-primary mr-2 mt-2");
         newBtn.attr("data-animalname", buttons[i]);
         $("#buttons-view").append(newBtn);
     }
 
 }
 
-// on click event that adds gifs
+// AJAX CALL + DISPLAY GIFS 
+// ---------------------------------------------------------------
+
 $(document).on("click", ".animalBtn", function(event) {
     // alert("clicked");
     // console.log(this);
@@ -67,7 +70,9 @@ $(document).on("click", ".animalBtn", function(event) {
     })
 });
 
-// add new buttons to our array
+// ADD BUTTONS
+// ---------------------------------------------------------------
+
 $("#add-button").on("click", function(event){
 
     event.preventDefault();
@@ -77,7 +82,19 @@ $("#add-button").on("click", function(event){
     buttons.push(userAnimal);
 
     renderButtons();
-})
+
+    $("#animal-input").val('');
+
+    // Found this on stackoverflow, ended up finding the right thing above 
+    // $('#animal-input').focus(function(){
+    //     $(this).val('');
+    //   });
+    
+});
+
+
+// START + STOP GIFS
+// ---------------------------------------------------------------
 
 $(document).on("click", ".gif", function(event) {
     console.log("clicked");
